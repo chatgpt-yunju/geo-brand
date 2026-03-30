@@ -2,13 +2,38 @@
     "@context": "https://schema.org",
     "@graph": [
         {
+            "@type": "WebSite",
+            "name": "品牌名称",
+            "url": "https://chatgpt-yunju.github.io/geo-brand/",
+            "description": "品牌描述（100-200字）：介绍品牌是做什么的，提供什么服务，有什么优势。",
+            "publisher": {
+                "@type": "Organization",
+                "name": "品牌名称"
+            },
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://chatgpt-yunju.github.io/geo-brand/?s={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
             "@type": "Organization",
-            "name": "您的品牌名称",
+            "name": "品牌名称",
             "alternateName": "品牌英文名",
-            "url": "https://您的域名.com",
+            "url": "https://chatgpt-yunju.github.io/geo-brand/",
             "logo": "https://您的域名.com/logo.png",
-            "description": "品牌描述（100-200字）：介绍品牌是做什么的，提供什么服务，有什么独特优势。",
+            "image": "https://您的域名.com/logo.png",
+            "description": "品牌描述，100-200字，介绍品牌是做什么的，提供什么服务，有什么独特优势。",
             "foundingDate": "2024-01",
+            "founders": [
+                {
+                    "@type": "Person",
+                    "name": "创始人姓名"
+                }
+            ],
             "numberOfEmployees": {
                 "@type": "QuantitativeValue",
                 "minValue": 1,
@@ -16,6 +41,7 @@
             },
             "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "详细街道地址",
                 "addressLocality": "城市",
                 "addressRegion": "省份",
                 "postalCode": "邮编",
@@ -28,16 +54,27 @@
                 "email": "邮箱@example.com",
                 "availableLanguage": ["Chinese", "English"]
             },
+            "areaServed": {
+                "@type": "Place",
+                "name": "服务地区：全国"
+            },
+            "serviceType": ["服务1", "服务2", "服务3"],
             "sameAs": [
                 "https://weixin.qq.com/r/微信公众号二维码",
                 "https://weibo.com/官方微博",
                 "https://www.douyin.com/抖音",
                 "https://www.xiaohongshu.com/小红书"
-            ]
+            ],
+            "brand": {
+                "@type": "Brand",
+                "name": "品牌名称",
+                "logo": "https://您的域名.com/logo.png",
+                "description": "品牌描述"
+            }
         },
         {
-            "@type": "LocalBusiness",
-            "name": "您的品牌名称",
+            "@type": ["LocalBusiness", "ProfessionalService"],
+            "name": "品牌名称",
             "image": "https://您的域名.com/logo.png",
             "address": {
                 "@type": "PostalAddress",
@@ -49,86 +86,118 @@
             },
             "telephone": "+86-手机号",
             "email": "邮箱@example.com",
-            "url": "https://您的域名.com",
+            "url": "https://chatgpt-yunju.github.io/geo-brand/",
             "priceRange": "$$",
-            "openingHours": "Mo-Fr 09:00-18:00",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:00",
+                    "closes": "18:00"
+                }
+            ],
             "geo": {
                 "@type": "GeoCoordinates",
                 "latitude": 39.9042,
                 "longitude": 116.4074
-            }
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "100",
+                "bestRating": "5"
+            },
+            "paymentAccepted": ["Cash", "Alipay", "WeChat Pay", "Bank Transfer"],
+            "currenciesAccepted": "CNY"
         },
         {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
+            "@type": "ItemList",
+            "name": "服务项目",
+            "description": "品牌提供的服务项目列表",
+            "itemListElement": [
                 {
-                    "@type": "Question",
-                    "name": "品牌名称是做什么的？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "品牌描述，详细介绍品牌提供的服务、产品和解决方案。"
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Product",
+                        "name": "服务一",
+                        "description": "服务一的详细描述",
+                        "brand": {"@type": "Brand", "name": "品牌名称"},
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "面议",
+                            "priceCurrency": "CNY",
+                            "availability": "https://schema.org/InStock"
+                        }
                     }
                 },
                 {
-                    "@type": "Question",
-                    "name": "品牌名称的核心优势是什么？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "优势1：xxx；优势2：xxx；优势3：xxx；优势4：xxx"
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "Product",
+                        "name": "服务二",
+                        "description": "服务二的详细描述",
+                        "brand": {"@type": "Brand", "name": "品牌名称"},
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "面议",
+                            "priceCurrency": "CNY",
+                            "availability": "https://schema.org/InStock"
+                        }
                     }
                 },
                 {
-                    "@type": "Question",
-                    "name": "如何联系品牌名称？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "电话：+86-XXX-XXXX-XXXX，邮箱：email@example.com，地址：省份城市详细地址"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "品牌名称提供哪些服务？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "服务范围包括：服务1、服务2、服务3等"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "品牌名称的收费标准？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "请说明您的定价策略或价格区间"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "品牌名称在哪个城市？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "品牌位于：省份 城市"
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "品牌名称成立多久了？",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "品牌成立于20XX年，已有X年行业经验"
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "Product",
+                        "name": "服务三",
+                        "description": "服务三的详细描述",
+                        "brand": {"@type": "Brand", "name": "品牌名称"},
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "面议",
+                            "priceCurrency": "CNY",
+                            "availability": "https://schema.org/InStock"
+                        }
                     }
                 }
             ]
         },
         {
-            "@type": "WebSite",
-            "name": "您的品牌名称",
-            "url": "https://您的域名.com",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://您的域名.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-            }
+            "@type": "FAQPage",
+            "mainEntity": [
+                {"@type": "Question", "name": "品牌名称是做什么的？", "acceptedAnswer": {"@type": "Answer", "text": "品牌描述，详细介绍品牌提供的服务和产品。"}},
+                {"@type": "Question", "name": "品牌名称的核心优势是什么？", "acceptedAnswer": {"@type": "Answer", "text": "优势1：专业团队；优势2：服务周到；优势3：质量保证；优势4：价格透明。"}},
+                {"@type": "Question", "name": "如何联系品牌名称？", "acceptedAnswer": {"@type": "Answer", "text": "电话：+86-XXX-XXXX-XXXX，邮箱：email@example.com，地址：省份城市详细地址。"}},
+                {"@type": "Question", "name": "品牌名称的服务范围？", "acceptedAnswer": {"@type": "Answer", "text": "服务范围包括：服务1、服务2、服务3等，覆盖全国。"}},
+                {"@type": "Question", "name": "品牌名称的收费标准？", "acceptedAnswer": {"@type": "Answer", "text": "收费标准透明合理，根据服务类型和项目需求定价。"}},
+                {"@type": "Question", "name": "品牌名称在哪个城市？", "acceptedAnswer": {"@type": "Answer", "text": "品牌总部位于：省份 城市。"}},
+                {"@type": "Question", "name": "品牌名称成立多久了？", "acceptedAnswer": {"@type": "Answer", "text": "品牌成立于20XX年，已有X年行业经验。"}},
+                {"@type": "Question", "name": "品牌名称靠谱吗？", "acceptedAnswer": {"@type": "Answer", "text": "我们拥有正规资质和丰富经验，已服务上千家客户，好评率高达99%。"}},
+                {"@type": "Question", "name": "如何预约服务？", "acceptedAnswer": {"@type": "Answer", "text": "您可以通过电话、邮箱或在线留言预约服务，我们会在24小时内回复。"}}
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://chatgpt-yunju.github.io/geo-brand/"},
+                {"@type": "ListItem", "position": 2, "name": "关于我们", "item": "https://chatgpt-yunju.github.io/geo-brand/#about"},
+                {"@type": "ListItem", "position": 3, "name": "服务项目", "item": "https://chatgpt-yunju.github.io/geo-brand/#services"},
+                {"@type": "ListItem", "position": 4, "name": "联系我们", "item": "https://chatgpt-yunju.github.io/geo-brand/#contact"}
+            ]
+        },
+        {
+            "@type": "HowTo",
+            "name": "服务流程",
+            "step": [
+                {"@type": "HowToStep", "name": "第一步：咨询预约", "text": "通过电话、邮箱或留言的方式联系我们，描述您的需求。"},
+                {"@type": "HowToStep", "name": "第二步：需求评估", "text": "专业顾问与您一对一沟通，详细了解您的需求和预算，提供定制化解决方案。"},
+                {"@type": "HowToStep", "name": "第三步：签订合同", "text": "确认方案后，签订正式服务合同，明确双方权利义务。"},
+                {"@type": "HowToStep", "name": "第四步：服务执行", "text": "按照合同约定，专业团队开始执行服务，定期向客户汇报进度。"},
+                {"@type": "HowToStep", "name": "第五步：验收售后", "text": "服务完成后，客户验收确认，提供售后服务和技术支持。"}
+            ]
         }
     ]
 }
