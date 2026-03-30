@@ -1,0 +1,63 @@
+# Robots.txt for GEO Brand Website
+# https://chatgpt-yunju.github.io/geo-brand/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://chatgpt-yunju.github.io/geo-brand/sitemap.xml
+
+# Crawl-delay (optional)
+Crawl-delay: 1
+
+# Disallow sensitive directories (if any)
+Disallow: /private/
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# AI Bots - 特别允许
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: BaiduSpider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Douban Bot
+Allow: /
+
+User-agent: Kimi
+Allow: /
+
+User-agent: Moonshot
+Allow: /
+
+User-agent: MiniMax
+Allow: /
+
+# OpenAI and Anthropic
+User-agent: OpenAI
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: claude-bot
+Allow: /
